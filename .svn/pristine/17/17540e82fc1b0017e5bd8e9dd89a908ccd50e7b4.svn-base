@@ -1,0 +1,40 @@
+package com.git.Action;
+
+import com.git.Basic.BasicAction;
+import com.git.Service.LoginService;
+import com.git.VO.User;
+
+public class LoginAction extends BasicAction{
+
+	private User user;
+	private String checkWord;
+	private LoginService loginService;
+	
+	public String getCheckWord() {
+		return checkWord;
+	}
+
+	public void setCheckWord(String checkWord) {
+		this.checkWord = checkWord;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	public void setLoginService(LoginService loginService) {
+		this.loginService = loginService;
+	}
+
+	public String login(){
+		String password = loginService.login(user.getUsername());
+		System.out.println(checkWord);
+		System.out.println(password);
+		return null;
+	}
+	
+}

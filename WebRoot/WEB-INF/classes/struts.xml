@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!--  就是页面namespace和struts.xml文件的namespace要一致 --> 
+	<constant name="struts.action.extension" value="do,action"/> 
+	<constant name = "struts.enable.DynamicMethodInvocation" value = "true"/>
+	<package name="MyFirst" namespace="/jsp" extends="struts-default">
+		<action name="YZMAction" class="com.git.Action.YZMAction" method="YZMmethod"></action>
+		<action name="loginAction" class="com.git.Action.LoginAction"></action>
+		<action name="CustomerListAction" class="com.git.Action.CustomerListAction">
+			<result name="success">/jsp/customer_queryCustomerList.jsp</result>
+		</action>	
+	</package>
+</struts>
